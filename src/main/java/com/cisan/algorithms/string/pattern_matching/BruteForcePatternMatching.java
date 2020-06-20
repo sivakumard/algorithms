@@ -12,13 +12,16 @@ public class BruteForcePatternMatching {
 
     static void search(String txt, String pat){
         int i = 0, j = 0, m = txt.length(), n = pat.length();
-
+        int oldPosition = i;
         while(i < m){
             if(txt.charAt(i++) == pat.charAt(j)) {
+                oldPosition = i;
                 j++;
                 while (i < m && j < n && txt.charAt(i++) == pat.charAt(j++)) {}
                 if (j == n)
                     System.out.println("Pattern found at index : " + (i - n));
+                else
+                    i = oldPosition;
                 j = 0;
             }
         }
@@ -26,7 +29,7 @@ public class BruteForcePatternMatching {
 
     public static void main(String[] args)
     {
-        String txt = "AABAACAADAABAAABAA";
+        String txt = "AAABAACAADAABAAABAA";
         String pat = "AABA";
         search(txt, pat);
     }
