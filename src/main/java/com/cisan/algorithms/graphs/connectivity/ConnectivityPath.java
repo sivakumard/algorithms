@@ -1,4 +1,4 @@
-package com.cisan.algorithms.graphs;
+package com.cisan.algorithms.graphs.connectivity;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -19,13 +19,6 @@ public class ConnectivityPath {
         for(int[] edge : edges)
             graph.get(edge[0]).add(edge[1]);
         System.out.println(graph);
-    }
-
-    public static void main(String[] args) {
-        int n = 4;
-        ConnectivityPath obj = new ConnectivityPath(n, new int[][]{{0, 1}, {0, 2}, {1, 2}, {2, 0}, {2, 3}, {3, 3}});
-        obj.isPathExists(n,1,3);
-        obj.isPathExists(n,1,6);
     }
 
     private void isPathExists(int n, int u, int v) {
@@ -49,5 +42,13 @@ public class ConnectivityPath {
         }
         System.out.println("No path found between " + u +":" + v);
     }
+
+    public static void main(String[] args) {
+        int n = 4;
+        ConnectivityPath obj = new ConnectivityPath(n, new int[][]{{0, 1}, {0, 2}, {1, 2}, {2, 0}, {2, 3}, {3, 3}});
+        obj.isPathExists(n,1,3);
+        obj.isPathExists(n,1,6);
+    }
+
 
 }
