@@ -22,6 +22,7 @@ public class DFS {
     }
 
     public void dfs(int node) {
+        if(visited[node]) return;
         visited[node] = true;
         System.out.print(node + " ");
         for (int x : graph.get(node))
@@ -31,9 +32,11 @@ public class DFS {
     }
 
     public static void main(String[] args) {
-        DFS obj = new DFS(4, new int[][]{{0, 1}, {0, 2}, {1, 2}, {2, 0}, {2, 3}, {3, 3}});
+        int n =4;
+        DFS obj = new DFS(n, new int[][]{{0, 1}, {0, 2}, {1, 2}, {2, 0}, {2, 3}, {3, 3}});
         System.out.print("Depth first search traversal: ");
 
-        obj.dfs(2);
+        for(int i = 0; i < n; i++)
+            obj.dfs(i);
     }
 }
