@@ -22,13 +22,12 @@ public class CycleDirectedUsingColors {
     }
 
     void hasCycle(int n) {
-        for (int i = 0; i < n; i++)
-            color[i] = WHITE;
         for (int i = 0; i < n; i++) {
-            if (dfs(i)) {
-                System.out.println("Has cycle");
-                return;
-            }
+            if(color[i] == WHITE)
+                if (dfs(i)) {
+                    System.out.println("Has cycle");
+                    return;
+                }
             System.out.println();
         }
         System.out.println("No cycle");
