@@ -11,16 +11,21 @@ public class FloydWarshallAllPairs {
             {INF, INF, INF, 0}
     };
 
+    int dist[][] = new int[n][n];
 
     private void shortestPath() {
+        for(int i =0; i < n; i++)
+            for(int j = 0; j < n; j++)
+                dist[i][j] = graph[i][j];
+
         for(int k = 0; k < n; k++)
             for(int i = 0; i < n; i++)
                 for(int j = 0; j < n; j++)
-                    if(graph[i][k] + graph[k][j]  < graph[i][j])
-                        graph[i][j] = graph[i][k] + graph[k][j];
+                    if(dist[i][k] + dist[k][j]  < dist[i][j])
+                        dist[i][j] = dist[i][k] + dist[k][j];
 
         for(int i = 0; i < n ; i++)
-            System.out.println(Arrays.toString(graph[i]));
+            System.out.println(Arrays.toString(dist[i]));
     }
 
     public static void main(String[] args) {
