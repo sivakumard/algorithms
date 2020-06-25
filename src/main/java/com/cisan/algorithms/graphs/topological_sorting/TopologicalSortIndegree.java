@@ -4,7 +4,7 @@ import com.cisan.algorithms.graphs.GraphUtil;
 
 import java.util.*;
 
-//DAG - DFS
+//DAG
 public class TopologicalSortIndegree {
     int n = 6;
     int[][] edges = {
