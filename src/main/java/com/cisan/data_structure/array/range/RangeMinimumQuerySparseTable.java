@@ -1,4 +1,4 @@
-package com.cisan.data_structure.array;
+package com.cisan.data_structure.array.range;
 
 import java.util.Arrays;
 
